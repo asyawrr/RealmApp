@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9212261C29A39E4D0054A859 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 9212261B29A39E4D0054A859 /* RealmSwift */; };
 		A804828427103A010095A493 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A804828327103A010095A493 /* DataManager.swift */; };
 		A804828627103A100095A493 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A804828527103A100095A493 /* StorageManager.swift */; };
 		A804828827103BFD0095A493 /* TaskList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A804828727103BFD0095A493 /* TaskList.swift */; };
@@ -16,8 +17,6 @@
 		A872A11920E9D82600ECE2BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A872A11720E9D82600ECE2BA /* LaunchScreen.storyboard */; };
 		A872A12120E9D87400ECE2BA /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A872A12020E9D87400ECE2BA /* TaskListViewController.swift */; };
 		A872A12320E9D88E00ECE2BA /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A872A12220E9D88E00ECE2BA /* TasksViewController.swift */; };
-		A8E4108D28B638810079DF08 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = A8E4108C28B638810079DF08 /* Realm */; };
-		A8E4108F28B638810079DF08 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A8E4108E28B638810079DF08 /* RealmSwift */; };
 		A8E78FE9241A76EE00E66973 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E78FE8241A76EE00E66973 /* AlertController.swift */; };
 /* End PBXBuildFile section */
 
@@ -41,8 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A8E4108F28B638810079DF08 /* RealmSwift in Frameworks */,
-				A8E4108D28B638810079DF08 /* Realm in Frameworks */,
+				9212261C29A39E4D0054A859 /* RealmSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,8 +146,7 @@
 			);
 			name = RealmApp;
 			packageProductDependencies = (
-				A8E4108C28B638810079DF08 /* Realm */,
-				A8E4108E28B638810079DF08 /* RealmSwift */,
+				9212261B29A39E4D0054A859 /* RealmSwift */,
 			);
 			productName = RealmApp;
 			productReference = A872A10B20E9D82400ECE2BA /* RealmApp.app */;
@@ -181,7 +178,7 @@
 			);
 			mainGroup = A872A10220E9D82400ECE2BA;
 			packageReferences = (
-				A8E4108B28B638810079DF08 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				9212261A29A39E4D0054A859 /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = A872A10C20E9D82400ECE2BA /* Products */;
 			projectDirPath = "";
@@ -363,6 +360,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V63HT7SS5T;
 				INFOPLIST_FILE = RealmApp/App/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -381,6 +379,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V63HT7SS5T;
 				INFOPLIST_FILE = RealmApp/App/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -418,25 +417,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		A8E4108B28B638810079DF08 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+		9212261A29A39E4D0054A859 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/realm/realm-swift";
+			repositoryURL = "https://github.com/realm/realm-swift.git";
 			requirement = {
-				branch = master;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.36.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		A8E4108C28B638810079DF08 /* Realm */ = {
+		9212261B29A39E4D0054A859 /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = A8E4108B28B638810079DF08 /* XCRemoteSwiftPackageReference "realm-swift" */;
-			productName = Realm;
-		};
-		A8E4108E28B638810079DF08 /* RealmSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = A8E4108B28B638810079DF08 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			package = 9212261A29A39E4D0054A859 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */

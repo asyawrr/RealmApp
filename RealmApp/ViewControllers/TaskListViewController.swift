@@ -84,6 +84,7 @@ class TaskListViewController: UITableViewController {
     }
 
     @IBAction func sortingList(_ sender: UISegmentedControl) {
+        // TODO
     }
     
     @objc private func addButtonPressed() {
