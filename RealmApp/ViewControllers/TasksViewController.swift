@@ -54,15 +54,10 @@ class TasksViewController: UITableViewController {
     }
         
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let task: Task
-        let targetSection: Int
-        if indexPath.section == 0 {
-            task = currentTasks[indexPath.row]
-            targetSection = 1
-        } else {
-            task = completedTasks[indexPath.row]
-            targetSection = 0
-        }
+        let task = indexPath.section == 0 ?
+        currentTasks[indexPath.row] :
+        completedTasks[indexPath.row]
+
 
         let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { _, _, _ in
             StorageManager.shared.delete(task)
@@ -79,12 +74,11 @@ class TasksViewController: UITableViewController {
         let doneAction = UIContextualAction(style: .normal, title: "Done") { [unowned self] _, _, isDone in
             StorageManager.shared.done(task)
             
-            let targetIndexPath = IndexPath(row: (targetSection == 0 ? currentTasks.count - 1  : completedTasks.count - 1), section: targetSection)
+            let indexPathForCurrentTask = IndexPath(row: self.currentTasks.index(of: task) ?? 0, section: 0)
+            let indexPathForCompletedTask = IndexPath(row: self.completedTasks.index(of: task) ?? 0, section: 1)
+            let destinationIndexRow = indexPath.section == 0 ? indexPathForCompletedTask : indexPathForCurrentTask
             
-            tableView.beginUpdates()
-            tableView.deleteRows(at: [indexPath], with: .automatic)
-            tableView.insertRows(at: [targetIndexPath], with: .automatic)
-            tableView.endUpdates()
+            tableView.moveRow(at: indexPath, to: destinationIndexRow)
             
             isDone(true)
         }

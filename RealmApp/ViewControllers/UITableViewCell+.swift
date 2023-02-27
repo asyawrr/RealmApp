@@ -18,8 +18,10 @@ extension UITableViewCell {
 
         if taskList.tasks.isEmpty {
             content.secondaryText = "0"
+            accessoryType = .none
         } else if !currentTasks.isEmpty {
             content.secondaryText = currentTasks.count.formatted()
+            accessoryType = .none
         } else {
             content.secondaryText = .none
             accessoryType = .checkmark
